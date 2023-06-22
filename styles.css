@@ -1,0 +1,132 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 19%;
+  max-width: 700px;
+  margin: 6em auto;
+}
+
+button {
+  text-align: center;
+  padding: 30px;
+  font-size: 28px;
+  font-weight: bold;
+  color: black;
+}
+
+div:nth-child(1) {
+  text-align: end;
+  color: white;
+  font-size: 38px;
+  padding: 30px 10px;
+}
+
+.border {
+  border: 1px solid black;
+}
+
+.calculator {
+  display: grid;
+  grid-template-areas:
+    "output output output output"
+    "clear clear backspace divide"
+    "seven eight nine multiply"
+    "four five six subtract"
+    "one two three add"
+    "zero zero zero equal";
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 90px 90px 90px 90px 90px 90px;
+}
+
+.output {
+  grid-area: output;
+  background-color: black;
+}
+
+.clear {
+  grid-area: clear;
+  background-color: #d8d9db;
+}
+
+.backspace {
+  grid-area: backspace;
+  background-color: #d8d9db;
+}
+
+.divide {
+  grid-area: divide;
+  background-color: #df974c;
+}
+
+.multiply {
+  grid-area: multiply;
+  background-color: #df974c;
+  padding: 10px;
+}
+
+.subtract {
+  grid-area: subtract;
+  background-color: #df974c;
+}
+
+.add {
+  grid-area: add;
+  background-color: #df974c;
+}
+
+.equal {
+  grid-area: equal;
+  background-color: #df974c;
+}
+
+.zero {
+  grid-area: zero;
+  background-color: #d8d9db;
+}
+
+.one {
+  grid-area: one;
+  background-color: #d8d9db;
+}
+
+.two {
+  grid-area: two;
+  background-color: #d8d9db;
+}
+
+.three {
+  grid-area: three;
+  background-color: #d8d9db;
+}
+
+.four {
+  grid-area: four;
+  background-color: #d8d9db;
+}
+
+.five {
+  grid-area: five;
+  background-color: #d8d9db;
+}
+
+.six {
+  grid-area: six;
+  background-color: #d8d9db;
+}
+
+.seven {
+  grid-area: seven;
+  background-color: #d8d9db;
+}
+
+.eight {
+  grid-area: eight;
+  background-color: #d8d9db;
+}
+
+.nine {
+  grid-area: nine;
+  background-color: #d8d9db;
+}
