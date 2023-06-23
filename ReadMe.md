@@ -8,6 +8,11 @@
 
 <p id="description">Create an app that has replicates the functionality of a calculator.</p>
 
+<h2>Project Screenshots:</h2>
+
+<img src="https://github.com/Spawn9986/calculator/blob/main/Pics/Calculator.png" alt="project-screenshot" width="463" height="973/">
+<img src="https://github.com/Spawn9986/calculator/blob/main/Pics/Control%20Flow%20Diagram.png" alt="project-flow-chart" width="973" height="463/">
+
 <h2>💻 Built with</h2>
 
 Technologies used in the project:
