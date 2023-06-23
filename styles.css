@@ -20,6 +20,10 @@ button {
   color: black;
 }
 
+button:hover {
+  background-color: rgba(87, 105, 104, 0.4);
+}
+
 div:nth-child(1) {
   text-align: end;
   color: white;
