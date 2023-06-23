@@ -8,6 +8,10 @@ body {
   margin: 6em auto;
 }
 
+.white {
+  color: white;
+}
+
 button {
   text-align: center;
   padding: 30px;
@@ -24,7 +28,7 @@ div:nth-child(1) {
 }
 
 .border {
-  border: 1px solid black;
+  border-top: 1px solid black;
 }
 
 .calculator {
