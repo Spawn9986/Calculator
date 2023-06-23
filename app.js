@@ -1,16 +1,30 @@
-let output = document.querySelector(".output");
+const output = document.querySelector(".output");
 const calculator = document.querySelector(".calculator");
-let placeHolder = "0";
+const placeHolder = "0";
+let storedValues = "";
+
+function handleSymbol(value) {
+  output.innerText = placeHolder;
+}
+
+function handleNumber(value) {
+  //check if there were previosly any stored values prior to current click event
+  // if none stored -->
+  if (storedValues.length === 0) {
+    storedValues += value;
+    output.innerText = value;
+    // if some previosly stored -->
+  } else {
+    // Were the previously stored values all numbers?
+  }
+}
 
 function buttonClick(value) {
-  //when a button is clicked change the output inner text to match that of the clicked button if its a number
-  //output.innerText = value;
+  // if what was clicked is not a number
   if (isNaN(parseInt(value))) {
-    output.innerText = placeHolder;
-    /// DO something handlesymbol function etc
+    handleSymbol(value);
   } else {
-    output.innerText = value;
-    // Do something handleNumber function
+    handleNumber(value);
   }
 }
 
@@ -22,3 +36,19 @@ function init() {
 }
 
 init();
+
+/* Steps:
+1 -  Layout and functionality (output, numbers, symbols; 4 col, 6 rows)
+    o functions
+        + Init (includes Event Listener)
+        + Event Listener
+        + clickButton
+        + handleNumber
+        + handleSymbol
+2 - HTML
+3 - Style using CSS Grids and buttons wrapped in a div
+4 - Add Event Listener to parent div (calculator)
+    o add callback: clickButton function (will take the inner text of the button clicked as an argument when evoked) within Event Listener function
+5 - Write the clickButton function. 
+    o conditional --> check if its not a number (use handleSymbol function), else use handleNumber function;
+*/
