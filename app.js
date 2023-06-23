@@ -16,6 +16,7 @@ function handleNumber(value) {
     // if some previosly stored -->
   } else {
     // Were the previously stored values all numbers?
+    if (storedValues)
   }
 }
 
