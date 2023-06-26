@@ -42,7 +42,28 @@ function handleNumber(value) {
   }
 }
 
-function handleSymbol(value) {}
+function handleSymbol(value) {
+  switch (value) {
+    case "C":
+      console.log("switch, C");
+      break;
+    case "=":
+      console.log("switch, =");
+      break;
+    case "←":
+      if (buffer.length === 1) {
+        buffer = "0";
+      } else buffer = buffer.slice(0, -1);
+      console.log("switch, ←");
+      break;
+    case "+":
+    case "-":
+    case "×":
+    case "÷":
+      console.log("switch, operator");
+      break;
+  }
+}
 
 function reRender() {
   // take what was stored in the buffer and render on the screen after all calculations (handled seperately) are complete
