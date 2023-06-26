@@ -46,22 +46,65 @@ function handleSymbol(value) {
   switch (value) {
     case "C":
       console.log("switch, C");
+      buffer = "0";
+      runningTotal = 0;
       break;
     case "=":
       console.log("switch, =");
+      if (previousOperator === null) {
+        // need two numbers to do math
+        return;
+      }
+      flushOperation(parseInt(buffer));
+      previousOperator = null;
+      buffer = +runningTotal;
+      runningTotal = 0;
       break;
     case "←":
+      console.log("switch, ←");
       if (buffer.length === 1) {
         buffer = "0";
       } else buffer = buffer.slice(0, -1);
-      console.log("switch, ←");
       break;
     case "+":
     case "-":
     case "×":
     case "÷":
       console.log("switch, operator");
+      handleMath(value);
       break;
+  }
+}
+
+function flushOperation(intBuffer) {}
+
+function handleMath(value) {
+  if (buffer === "0") {
+    //do nothing
+    return;
+  }
+  //create an interim buffer that turns the current buffer (a string) into an integer to use with runningTotal
+  const intBuffer = parseInt(buffer);
+  if (runningTotal === 0) {
+    runningTotal = intBuffer;
+  } else {
+    flushOperation(intBuffer);
+  }
+
+  previousOperator = value;
+
+  buffer = "0";
+}
+
+function flushOperation(intBuffer) {
+  if (previousOperator === "+") {
+    runningTotal += intBuffer;
+  } else if (previousOperator === "-") {
+    runningTotal -= intBuffer;
+  } else if (previousOperator === "×") {
+    runningTotal *= intBuffer;
+  } else {
+    runningTotal /= intBuffer;
   }
 }
 
