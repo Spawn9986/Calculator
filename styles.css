@@ -43,7 +43,7 @@ button:hover {
   grid-template-rows: 90px 90px 90px 90px 90px;
 }
 
-.output-screen {
+.output {
   background-color: black;
   color: white;
   text-align: right;
