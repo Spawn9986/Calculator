@@ -57,7 +57,8 @@ function handleSymbol(value) {
       }
       flushOperation(parseInt(buffer));
       previousOperator = null;
-      buffer = +runningTotal;
+      //when you add anything to a string it automatically converts it to a string
+      buffer = "" + runningTotal;
       runningTotal = 0;
       break;
     case "←":
