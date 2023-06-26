@@ -1,23 +1,30 @@
+const placeHolder = 0;
+let runningTotal = 0;
+let previousOperator;
 const output = document.querySelector(".output");
-const calculator = document.querySelector(".calculator");
-const placeHolder = "0";
-let storedValues = "";
 
-function handleSymbol(value) {
+/* function handleSymbol(value) {
   output.innerText = placeHolder;
-}
+} */
 
 function handleNumber(value) {
-  //check if there were previosly any stored values prior to current click event
-  // if none stored -->
-  if (storedValues.length === 0) {
-    storedValues += value;
+  // If this is the first number recorderd store and render on output.
+  if (runningTotal === 0) {
+    runningTotal += value;
     output.innerText = value;
-    // if some previosly stored -->
-  } else {
-    // Were the previously stored values all numbers?
-    if (storedValues)
+    console.log("handleNumber, first occurrence, runningTotal becomes:", value);
   }
+  // if runningTotal !== 0 -->
+  // Possibilities at this point: (i.e., 99[9] or 9x[9] where the current state is the brackets).
+  // if the previous click was not a number (i.e 9x[9] above) --> (we would expect the output screen === 0) --> replace runningTotal with calculated value (i.e., 9x9 --> 81) & render only current buttons value on output screen. Remember that this has to have a num operator and num (i.e., 9x9) bc in the other path (i.e., clicking a symbol/ operator if there was not a previous number prior it will ignore it in handleSymbol so we have to treat this case like it already has a num operator [num] where [num] is the current click event)
+  if (output.innerText === 0) {
+    `${runningTotal}???____operator___??${value}`;
+  }
+  // if a number += runningTotal and render runningTotal in output screen also
+}
+
+function reRender() {
+  const output = document.querySelector(".output");
 }
 
 function buttonClick(value) {
@@ -27,11 +34,14 @@ function buttonClick(value) {
   } else {
     handleNumber(value);
   }
+  reRender();
 }
 
 function init() {
   // Add an event listener to the parent element
-  calculator.addEventListener("click", function (event) {
+  document.
+    .querySelector(".calc-btns")
+    .addEventListener("click", function (event) {
     buttonClick(event.target.innerText);
   });
 }
@@ -39,6 +49,18 @@ function init() {
 init();
 
 /* Steps:
+
+Game plan:
+Initial skeleton/ outline:
+
+Init() 
+    clickButton(value) 
+        handleNumber(value)
+        handleSymbol(value) 
+            flushOperation(intPlaceHolder)
+            handleMath(value)
+        reRender()
+
 1 -  Layout and functionality (output, numbers, symbols; 4 col, 6 rows)
     o functions
         + Init (includes Event Listener)
