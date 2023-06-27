@@ -6,21 +6,9 @@ const output = document.querySelector(".output");
 
 // ============= LOGIC ================
 
-// Initiates (target DOM elements and add Event Listeners etc)
-function init() {
-  // Add an event listener to the parent element and event target for individual click
-  document
-    .querySelector(".calc-btns")
-    .addEventListener("click", function (event) {
-      buttonClick(event.target.innerText);
-    });
-}
-
-init();
-
 // Event occurs. Now what?
 function buttonClick(value) {
-  // Click event is not a number
+  // Click event is not a number (i.e, a symbol)
   if (isNaN(parseInt(value))) {
     handleSymbol(value);
   }
@@ -28,7 +16,7 @@ function buttonClick(value) {
   else {
     handleNumber(value);
   }
-  // After all is done reRender the output screen
+  // After all is done reRender the output screen (seperate rendering from other for simplicity)
   reRender();
 }
 
@@ -113,6 +101,18 @@ function reRender() {
   // take what was stored in the buffer and render on the screen after all calculations (handled seperately) are complete
   output.innerText = buffer;
 }
+
+// Initiates (target DOM elements and add Event Listeners etc)
+function init() {
+  // Add an event listener to the parent element and event target for individual click
+  document
+    .querySelector(".calc-btns")
+    .addEventListener("click", function (event) {
+      buttonClick(event.target.innerText);
+    });
+}
+
+init();
 
 /* ============ Initial Skeleton/ Outline ================
 
