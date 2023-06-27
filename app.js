@@ -65,8 +65,6 @@ function handleSymbol(value) {
   }
 }
 
-function flushOperation(intBuffer) {}
-
 function handleMath(value) {
   if (buffer === "0") {
     //do nothing
