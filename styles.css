@@ -8,6 +8,8 @@ body {
 }
 
 .calc {
+  display: flex;
+  flex-direction: column;
   max-width: 200px;
   padding: 5% 0;
   margin: auto;
@@ -36,22 +38,22 @@ button:hover {
 .calc-btns {
   display: grid;
   grid-template-areas:
+    "output output output output"
     "clear clear backspace divide"
     "seven eight nine multiply"
     "four five six subtract"
     "one two three add"
     "zero zero zero equal";
-  grid-template-rows: 90px 90px 90px 90px 90px;
+  grid-template-rows: 90px 90px 90px 90px 90px 90px;
 }
 
 .output {
+  grid-area: output;
   background-color: black;
   color: white;
   text-align: right;
   font-size: 38px;
   padding: 30px 10px;
-  height: 90px;
-  width: 327px;
 }
 
 .clear {

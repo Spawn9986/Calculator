@@ -106,6 +106,9 @@ function init() {
   document
     .querySelector(".calc-btns")
     .addEventListener("click", function (event) {
+      if (event.target === output) {
+        return;
+      }
       buttonClick(event.target.innerText);
     });
 }
