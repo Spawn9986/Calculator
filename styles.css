@@ -5,7 +5,8 @@
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
   .calc {
-    width: 70%;
+    width: 50%;
+    margin-left: 0;
   }
 }
 
