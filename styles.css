@@ -8,8 +8,8 @@ body {
 }
 
 .calc {
-  width: 200px;
-  padding: 5px;
+  max-width: 200px;
+  padding: 5% 0;
   margin: auto;
 }
 
