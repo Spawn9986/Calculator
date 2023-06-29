@@ -2,22 +2,15 @@
   box-sizing: border-box;
 }
 
-@media only screen and (max-width: 768px) {
-  /* For mobile phones: */
-  .calc {
-    width: 50%;
-    margin-left: 0;
-  }
-}
-
 body {
   padding: 0;
   margin: 0;
 }
 
 .calc {
-  width: 12%;
-  margin: 10em auto;
+  width: 200px;
+  padding: 5px;
+  margin: auto;
 }
 
 button {
@@ -58,7 +51,7 @@ button:hover {
   font-size: 38px;
   padding: 30px 10px;
   height: 90px;
-  width: 100%;
+  width: 327px;
 }
 
 .clear {
