@@ -19,3 +19,7 @@ Technologies used in the project:
 
 - CSS Grids
 - Javascript
+
+<h2>👨‍💻 Try it Out Yourself</h2>
+
+<a href="https://spawn9986.github.io/calculator/">Live Demo</a>
